@@ -1,0 +1,11 @@
+{
+	"dependencies": {
+		"mocha":"",
+		"gulp":"",
+		"gulp-mocha":""
+		},
+	"scripts": {
+	    "test": "mocha test.js",
+	    "watch": "gulp watch"
+	  }
+}

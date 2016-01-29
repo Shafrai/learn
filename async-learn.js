@@ -7,21 +7,22 @@ var body="";
 var i = 0;
 async.whilst(
     function () {
-      console.log(body);
-      return i<2;
+      return body.trim() != 'meerkat';
     },
     function (cb) {
-        i++;
+      i++;
       getHttp(process.argv[2], function(err, data){
-        body +=data;
+        //console.log('getHttp - ' + data);
+        body += data;
         cb(null, data);
-      })
+      });
     },
-    function (err, n) {
+    function (err, result) {
       if (err){
         console.log(err);
       }
-      console.log(n)
+      console.log(i);
+      //console.log(result);
     }
 );
 
